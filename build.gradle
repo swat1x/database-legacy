@@ -9,17 +9,6 @@ version '1.7'
 
 repositories {
     mavenCentral()
-    maven { url = "https://jitpack.io" }
-}
-
-dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-    implementation 'com.github.swat1x:database'
-    implementation 'com.zaxxer:HikariCP:4.0.1'
-    implementation 'commons-dbutils:commons-dbutils:1.7'
-    implementation 'com.google.guava:guava-testlib:31.1-jre'
 }
 
 publishing {
@@ -28,6 +17,14 @@ publishing {
             artifactId = 'library'
             from components.java
         }
+    }
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+        implementation 'com.zaxxer:HikariCP:4.0.1'
+        implementation 'commons-dbutils:commons-dbutils:1.7'
+        implementation 'com.google.guava:guava-testlib:31.1-jre'
     }
 }
 
