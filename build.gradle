@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.swat1x'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+    implementation 'commons-dbutils:commons-dbutils:1.7'
+    implementation 'com.google.guava:guava-testlib:31.1-jre'
+}
+
+def targetJavaVersion = 16
+
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release = targetJavaVersion
+    }
+}
