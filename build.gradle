@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.github.swat1x'
-version '1.5'
+version '1.7'
 
 repositories {
     mavenCentral()
@@ -20,6 +20,15 @@ dependencies {
     implementation 'com.zaxxer:HikariCP:4.0.1'
     implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation 'com.google.guava:guava-testlib:31.1-jre'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'library'
+            from components.java
+        }
+    }
 }
 
 def targetJavaVersion = 16
