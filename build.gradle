@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
-group 'ru.swat1x'
+group 'com.github.swat1x'
 version '1.0'
 
 repositories {
@@ -13,12 +14,13 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    implementation 'com.zaxxer:HikariCP:4.0.0'
+    implementation 'com.zaxxer:HikariCP:4.0.1'
     implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation 'com.google.guava:guava-testlib:31.1-jre'
 }
 
 def targetJavaVersion = 16
+JavaCompile
 
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
