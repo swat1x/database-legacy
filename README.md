@@ -12,10 +12,10 @@ Double defaultBalance = 0;
 
 // Sync
 Double syncBalance = database.sync().query("SELECT * FROM `users` WHERE `username`=?" 
-                                      rs -> rs.next() ? rs.getDouble("balance") : defaultName, targetName);
+                                      rs -> rs.next() ? rs.getDouble("balance") : defaultBalance, targetName);
 // Async
 CompletableFuture<Double> asyncBalance = database.async().query("SELECT * FROM `users` WHERE `username`=?" 
-                                      rs -> rs.next() ? rs.getDouble("balance") : defaultName, targetName);
+                                      rs -> rs.next() ? rs.getDouble("balance") : defaultBalance, targetName);
 asyncBalance.thenAccept(balance -> System.out.println(String.format("Balance of %s: %d$", targetName, balance)));
 
 // Shutdown database
