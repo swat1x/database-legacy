@@ -37,17 +37,23 @@ database.shutdown();
         <groupId>com.github.swat1x</groupId>
         <artifactId>database</artifactId>
         <version>2.0</version>
-        <scope>provided</scope>
     </dependency>
+    <dependency>
+        <groupId>commons-dbutils</groupId>
+        <artifactId>commons-dbutils</artifactId>
+        <version>1.7</version>
+    </dependency>    
 </dependencies>
 ```
 
 **Gradle**
 ``` groovy
 repositories {
+    mavenCentral()
     maven { url 'https://jitpack.io' }
 }
 dependencies {
+    implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation "com.github.swat1x:database:2.0"
 }
 ```
