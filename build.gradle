@@ -22,9 +22,9 @@ publishing {
         compileOnly 'org.projectlombok:lombok:1.18.24'
         annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-        compile 'com.zaxxer:HikariCP:4.0.1'
-        compile 'commons-dbutils:commons-dbutils:1.7'
-        compile 'com.google.guava:guava-testlib:31.1-jre'
+        api 'com.zaxxer:HikariCP:4.0.1'
+        api 'commons-dbutils:commons-dbutils:1.7'
+        api 'com.google.guava:guava-testlib:31.1-jre'
     }
 }
 
