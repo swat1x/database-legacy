@@ -38,11 +38,6 @@ database.shutdown();
         <artifactId>database</artifactId>
         <version>2.0</version>
     </dependency>
-    <dependency>
-        <groupId>commons-dbutils</groupId>
-        <artifactId>commons-dbutils</artifactId>
-        <version>1.7</version>
-    </dependency>    
 </dependencies>
 ```
 
@@ -53,7 +48,6 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation "com.github.swat1x:database:2.0"
 }
 ```
