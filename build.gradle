@@ -5,11 +5,13 @@ plugins {
 }
 
 group 'com.github.swat1x'
-version '2.0'
+version '2.3'
 
 repositories {
     mavenCentral()
 }
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications {
@@ -25,23 +27,5 @@ publishing {
         api 'com.zaxxer:HikariCP:4.0.1'
         api 'commons-dbutils:commons-dbutils:1.7'
         api 'com.google.guava:guava-testlib:31.1-jre'
-    }
-}
-
-def targetJavaVersion = 16
-JavaCompile
-
-java {
-    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
-    if (JavaVersion.current() < javaVersion) {
-        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
-    }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
-        options.release = targetJavaVersion
     }
 }
