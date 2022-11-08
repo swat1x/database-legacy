@@ -36,7 +36,7 @@ database.shutdown();
     <dependency>
         <groupId>com.github.swat1x</groupId>
         <artifactId>database</artifactId>
-        <version>2.0</version>
+        <version>2.3</version>
     </dependency>
 </dependencies>
 ```
@@ -48,6 +48,6 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    implementation "com.github.swat1x:database:2.0"
+    implementation "com.github.swat1x:database:2.3"
 }
 ```
